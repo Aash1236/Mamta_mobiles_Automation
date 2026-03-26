@@ -24,10 +24,21 @@ pipeline {
         }
         stage('Install Browser') {
             steps{
-                bat 'npx playwright install'
+                bat '''
+        IF NOT EXIST "%USERPROFILE%\\AppData\\Local\\ms-playwright" (
+            echo Installing Playwright browsers...
+            npx playwright install chromium
+        ) ELSE (
+            echo Browsers already installed, skipping...
+        )
+        '''
             }
         }
         stage('Run Tests') {
+            environment{
+                ADMIN_EMAIL = credentials('admin-creds').username
+                ADMIN_PASSWORD = credentials('admin-creds').password
+            }
             steps{
                 bat 'npx playwright test'
             }
