@@ -2,6 +2,7 @@ pipeline {
     agent any
     tools{
         nodejs 'NodeJS'
+        allure 'Allure'
     }
     environment {
         BASE_URL = "https://newmamtamobiles-eight.vercel.app/"
