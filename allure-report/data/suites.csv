@@ -1,7 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","7139","Authenticate and save session","setup","2026-03-26","passed","2026-03-26","","setup\auth.setup.ts","",""
-"","8436","Admin flow","chromium","2026-03-26","passed","2026-03-26","@sanity","sanity\admin-navigation.spec.ts","",""
-"","2125","Admin Login Smoke Test","chromium","2026-03-26","passed","2026-03-26","","smoke\login.spec.ts","",""
-"","4142","E2E: Product → Cart → Checkout","chromium","2026-03-26","passed","2026-03-26","@smoke","smoke\cart.spec.ts","",""
-"","5138","E2E: Complete Order Flow(COD)","chromium","2026-03-26","passed","2026-03-26","@smoke","smoke\order.spec.ts","",""
-"","17953","Admin flow crud/","chromium","2026-03-26","passed","2026-03-26","@sanity","sanity\admin-crud.spec.ts","",""
