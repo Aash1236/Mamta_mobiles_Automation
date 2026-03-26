@@ -36,11 +36,14 @@ pipeline {
         }
         stage('Run Tests') {
             environment{
-                ADMIN_EMAIL = credentials('admin-creds').username
-                ADMIN_PASSWORD = credentials('admin-creds').password
+                ADMIN_CREDS = credentials('admin-creds')
             }
             steps{
-                bat 'npx playwright test'
+                bat '''
+        set ADMIN_EMAIL=%ADMIN_CREDS_USR%
+        set ADMIN_PASSWORD=%ADMIN_CREDS_PSW%
+        npx playwright test
+        '''
             }
         }
         stage('Generate Allure Report') {
