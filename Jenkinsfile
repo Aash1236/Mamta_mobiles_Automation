@@ -58,6 +58,11 @@ pipeline {
     post{
         always {
              archiveArtifacts artifacts: 'allure-report/**', allowEmptyArchive: true
+             allure(
+            includeProperties: false,
+            jdk: '',
+            results: [[path: 'allure-results']]
+        )
         }
         success {
             echo '✅ Build Successful'
