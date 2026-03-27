@@ -7,10 +7,10 @@ pipeline {
     environment {
         BASE_URL = "https://newmamtamobiles-eight.vercel.app/"
     }
-    triggers{
-        pollSCM('H/2 * * * *')       
-        cron('0 0 */2 * *')         
-    }
+    // triggers{
+    //     pollSCM('H/2 * * * *')       
+    //     cron('0 0 */2 * *')         
+    // }
     stages{
         stage('Checkout code') {
             steps {
@@ -42,7 +42,7 @@ pipeline {
                 bat '''
         set ADMIN_EMAIL=%ADMIN_CREDS_USR%
         set ADMIN_PASSWORD=%ADMIN_CREDS_PSW%
-        npx playwright test
+        npx playwright test --workers=3
         '''
             }
         }
